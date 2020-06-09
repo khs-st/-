@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0609-1</title>
+</head>
+
+<body>
+    <script>
+        //not and or
+        alert(1 == 2 ? 1 : 20);
+        //true일때
+        alert(1);
+        //false일때
+        alert(20);
+
+        false && false //앞에 false 있는 애들은 뒤에 것을 
+        false && true
+        true && false
+        true && true
+
+        false || false
+        false || true
+        true || false
+
+        true || true
+
+        //a라는 변수가 60을 넘을 때 경고창
+        var a = 50;
+        if (a < 60) {
+            alert('warning');
+        }
+
+        //경고창 10번뜨게
+        // var a;
+        // var b;
+        // for (a=1; a<10; a++){
+        //     for(var num=1; num<10; num++){
+        //     b=a*num;    
+        //     alert(a+'*'+num+'='+b);
+        //     console.log(a+'*'+num+'='+b);
+        //     }
+
+        // }
+        document.write(typeof 3);
+        // undefined : 변수가 정의되지 않거나 값이 없을 때
+        // number : 데이터 타입이 수일 때
+        // string : 데이터 타입이 문자열일 때
+        // boolean : 데이터 타입이 불리언일 때
+        // object : 데이터 타입이 함수, 배열 등 객체일 때
+        // function : 변수의 값이 함수일 때
+        // symbol : 데이터 타입이 심볼일 때
+        console.log(typeof (2.22)); //typeof 2.22 는 숫자이기때문에 number로 찍힘.
+        var a = 10;
+        var b = 2;
+        var j = 0;
+        for (i = 1; i < 5; i += 2) {
+            a += i;
+            j++;
+            alert(j);
+            console.log(j);
+        }
+        alert(a + b);
+        console.log(a + b);
+    </script>
+</body>
+
+</html>
