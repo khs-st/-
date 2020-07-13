@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        //스크립트 태그
+        //'a'
+        //"abc"
+
+        //-,*,/연산을 글자랑 숫자가 하게 되면.. ascii코드
+        //int 연산이 됩니다.
+
+        //js
+        //-,*,/ 연산을 글자랑 숫자가하면 NaN 이 됨, 오로지 +연산만 받습니다.
+        //익스플로러, 엣지에는 동작이 안됨
+        var test='abcd';
+        var test=123;
+        alert(test);
+        alert('273+72='+(273+72));
+        alert(`273+27=${273+27}`);      
+
+        let a=10;
+        // let a=20; //재선언하면 안됨
+        alert(a);
+
+        const cont=15;
+        // const exampe; //이런건 안된다. 선언할때 변수부터하면 안된다. 자바의 경우엔 final int로 한번은 값을 할당 가능, 두번은 안됨
+        example=100;
+        alert(cont);
+        alert(example);
+        */
+        //1번 조건문
+        //조건문 예시 : 학점이 4.0을 넘고 4.5미만인 학생을 출력하세요.
+        var score = Number(prompt('1번 조건문 예시) 학점은?', ''));
+        if (score > 4.0 && score < 4.5) {
+            alert('"조건에 충족한 학생입니다"');
+        } else if (score == 4.5) {
+            alert("학점이 4.5점인 학생입니다.")
+        } else {
+            alert(score);
+        }
+        //2번 조건문 예시)switch 조건문
+        var key = Number(prompt('2번 조건문 예시) 숫자를 입력하세요', '0'));
+
+        switch (key % 2) {
+            case 0:
+                alert("짝수입니다.");
+                break;
+            case 1:
+                alert("홀수입니다.");
+                break;
+            default:
+                alert("숫자가 아닙니다.");
+                break;
+        }
+
+        //3번 조건문 예시)true, false 띄우는 조건문
+        var input = prompt("3번 조건문 예시) 숫자를 입력하세요.", '');
+        var number = Number(input);
+        (number > 0) ? alert('자연수'): alert('자연수 아님'); //true면 alert('자연수'), false면 alert('자연수 아님')
+
+        //짧은 조건문
+        true || alert('1번 실행되나요?');
+        false || alert('2번 실행되는건가요?');
+
+        true && alert('될까요?');
+        false && alert('안될까요?');
+
+        //짧은 조건문 예시 
+        var _example = prompt("짧은 조건문 예시) 숫자를 입력하세요.", '0');
+        _example % 2 == 0 || alert('홀수입니다.');
+        _example % 2 == 0 && alert('짝수입니다.');
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

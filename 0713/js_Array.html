@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var array = [1, 2, 3, 4, 5, '가나다'];
+        alert(array[0]); //1
+        alert(array[4]); //5
+        alert(array[5]); //가나다
+        array.push('finish');
+        alert(array[6]); //finish
+
+        var arrk = ['ㄱ', 'ㄴ', 'ㄷ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅅ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ', 'ㅏ', 'ㅑ', 'ㅓ', 'ㅕ', 'ㅗ', 'ㅛ',
+            'ㅜ', 'ㅠ', 'ㅡ', 'ㅣ'];
+        // var alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+        //     'u', 'v', 'w', 'x', 'y', 'z'];
+        var result='';
+        var alpha = String(prompt('알파벳 소문자를 입력하세요.', ''));
+        for (var i = 0; i < alpha.length; i++) {
+            result += arrk[alpha.charCodeAt(i)-97];
+        }
+        alert(result);
+    </script>
+    <style>
+        h1{
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<h1>ssss</h1>
+</body>
+
+</html>
