@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        //하나의 파라메터만 받지만 추가적으로 파라메터를 받으면 그냥 무시한다.
+        alert("먼저");
+        alert("먼저", "무시당함"); //뒤에 쓴건 실행하지않는다.
+        alert();
+        prompt("입력해보세요.");
+
+        //파라메터의 개수에 따라서 예외처리가 되어있는 것들도 있다.
+        var array1 = Array(); //빈 배열
+        var array2 = Array(5); //5칸 배열 
+        var array3 = Array(1, 2, 3, 4); //4칸 배열 , 배열 안의 내용은 1,2,3,4
+        var array4 = Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10); //10칸배열
+        var array5=[1];
+        var array6=[1,2,3,4];
+        alert(array1);
+        alert(array2);  //실행결과는 공간,공간,공간,공간,공간 이렇게 되므로 쉼표4개찍힌다.
+        alert(array3);
+        alert(array4);
+        alert(array5);
+        alert(array6);
+
+
+        function abc(a,b,c) {
+            if (arguments.length == 0)
+                return 0;
+            var sum = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            return sum; //1번
+            //alert(sum); //2번
+        }
+        alert(abc(1,2,3)); //1번일때 호출가능, 반환하는 값(return 값)을 띄운다.
+        abc(); //2번일때 호출가능
+
+
+
+        function pita1(w,h){
+            return Math.sqrt(w*w+h*h); //Math.sqrt는 루트(w의제곱 + h의 제곱)
+        }
+        alert(pita1(3,4));
+
+        function square(x){
+            return x*x;
+        }
+        function pita2(w,h){
+            return Math.sqrt(square(w)+square(h)); //square함수로 제곱을 만들어서 루트로 리턴함
+        }
+        alert(Math.floor(pita2(5,7)));  //floor함수로 소수점자리 안뜨게 함
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

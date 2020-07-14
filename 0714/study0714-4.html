@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        //타이머 함수
+        setTimeout(function(){
+            alert('4초 후...');
+        },4000);
+
+        var three=function(){
+            alert('3초 후 실행');
+        }
+        var immediately=function(){
+            alert('바로 실행!');
+        }
+        var two=function(){
+            alert('2초 후 실행!');
+        }
+        setTimeout(three,3000); //3초 뒤 실행
+        setTimeout(two,2000); //2초 뒤 실행
+        setTimeout(immediately(),5000); //바로 실행
+        */
+
+        function test4(a, b, c) {
+            //매개변수 초기화
+            b = b || 4;
+            c = c || 6;
+
+            //출력
+            alert(a + ':' + b + ':' + c);
+        }
+        //함수 호출
+        test4(1, 2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

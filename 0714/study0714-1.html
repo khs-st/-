@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    
+        function name1(params) {
+            alert(params);
+        }
+        name1('안녕');
+        var func=
+
+        function () {
+            var output=prompt('숫자 입력해주세요.','1'); //주석도 출력가능
+            alert(output);
+            return "리턴값을 넣어야함";
+        }
+        alert(func()); //리턴값을 주어야 리턴값 출력
+        alert(func); //14번에서 17번줄까지 쓴 내용이 출력된다.
+        func(); //14번 줄, 16번 함수를 실행 
+        alert(typeof(func)); //fuction 타입으로 나온다.
+        
+        
+        function name2() {
+            alert('b');
+        }
+        function name2() {
+            alert('a');
+        }
+        name2();  //  이 경우엔 뒤의 function이 찍힌다.
+       
+       /*
+        //익명함수와 익명아닌함수 차이점
+        
+        fff(); //익명함수  //42번째줄이나 45번째줄 밑에 써줘야 한다.
+        var fff=function(){
+            alert('익명함수1');     //결과는 둘다 수행하지 않는다.
+        }
+        var fff=function(){
+            alert('익명함수2');
+        }
+        */
+
+        /*
+        fz(); //실행순서:3번  ,함수를 밑에 써줘도 함수호출이 된다.
+        fu();
+        function fz() { //실행순서:1번
+            alert('fz');
+        }
+
+        function fz() { //실행순서:2번 (1번을 덮어쓰기)
+            alert('1번을 덮어썼습니다.'); //50번째에 있는 뒤의 함수가 호출이 된다.
+        }
+        
+
+
+        //익명함수보다 선언함수 실행이 먼저 된다. 그리고 선언적함수가 먼저 생성된다.
+        var fx = function () { //익명함수는 무조건 뒤에 써야(68번줄) 실행된다.
+            alert('익명함수');
+        }
+       
+        function fu() {     //선언함수는 위에쓰든 밑에쓰든 된다.
+            alert('선언함수');
+        }
+        
+        
+        fx();   //선언함수를 먼저 호출하고 익명함수를 호출합니다. 이 줄을 주석 처리했을때는 익명함수는 실행이 안된다.
+       */
+    </script>
+    <style>
+        h2{
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+<h2>asdsada</h2>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       
+    //객체
+    var student1={
+        name:'kobalja',
+        java:100,
+        javascript:100
+    }
+    var student2={
+        name:'sss',
+        java:50,
+        javascript:50
+    }
+    //in 키워드
+    //해당 키가 객체안에 있는지 여부 확인
+    alert('name' in student1);
+    alert('java' in student2);
+    //with 키워드
+    //개체의 속성을 출력할 때 with(객체){코드} 를 사용하면 객체의 속성을 사용하기 쉽다.
+    var output='';
+    with(student1){
+        output+='name :'+name+'\n';
+        output+='java :'+java+'\n';
+        output+='javascript :'+javascript+'\n';
+    }
+    alert(output);
+
+    var output2='';
+    with(student2){
+        output2+='name :'+name+'\n';
+        output2+='java :'+java+'\n';
+        output2+='javascript :'+javascript+'\n';
+    }
+    alert(output2);
+    
+    //만약 with키워드 사용할 때 변수 이름이 충돌한다면? window를 이용하면 됩니다.
+    var output='';
+    with(student1){
+        window.output+='name: '+name+'\n';
+        window.output+='java: '+java+'\n';
+    } 
+    alert(output);
+
+        //객체의 속성 추가,제거
+        var student3 = {}; //변수 선언
+
+        student3.name = 'kobalja'; //객체 속성을 추가한다.
+        student3.age = 26;
+        student3.number = 25;
+
+        for (var key in student3) {
+            alert(key + ":" + student3[key]); //name, age, number 순차적으로 출력한다.
+        }
+
+        //toString() 메서드 추가 toString()은 객체에 있는 속성을 출력하는 메서드이다.
+        student3.toString = function () {
+            var output = '';
+            for (var key in this) {
+                //toString() 메서드를 출력하지 않게 한다.
+                if (key != 'toString') {
+                    output += key + '\t' + this[key] + '\n'; //크롬에선 \t이상하게 나온다.
+                }
+            }
+            return output;
+        };
+
+        alert(student3.toString());
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

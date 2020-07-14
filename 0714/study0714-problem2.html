@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1번
+        var chef={
+            이름: 'Nature of Code',
+            가격: 30000+'원',
+            저자: '다니엘 쉬프만',
+            ISBN: 9788968481901,
+            페이지수: 620+'페이지'
+        };
+        var output='';
+        with(chef){
+                output+='이름: '+이름+'\n';
+                output+='가격: '+가격+'\n';
+                output+='저자: '+저자+'\n';
+                output+='ISBN '+ISBN+'\n';
+                output+='페이지 수: '+페이지수+'\n';
+        }
+        alert(output);
+
+        //2번
+        function stars(){
+            get:function(){
+            alert()
+            }
+        }
+        var star=[
+        {name: 일벌레, mineral: 50,gas: 0, supply: 1},
+        {name: 일벌레, mineral: 50,gas: 0, supply: 1},
+        {name: 일벌레, mineral: 50,gas: 0, supply: 1},
+        {name: 일벌레, mineral: 50,gas: 0, supply: 1}
+        ];
+        var output='이름(name)\t미네랄(mineral)\t가스(gas)\t보급품(supply)';  
+        for(var i in star){
+            output+=star[i].toString()+'\n';
+        }
+        alert(output);
+        //3번
+        var object={
+            ["+"]:1,
+            ["-"]:2,
+            ["*"]:3,
+            ["/"]:4,
+        };
+        alert(object["+"]);
+        alert(object["-"]);
+        alert(object["*"]);
+        alert(object["/"]);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

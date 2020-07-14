@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1번
+        function test(a, b, c) {
+            console.log(a);
+            console.log(a * b);
+            console.log(a * b * c);
+        }
+        test(10, 100); //NaN으로 결과 출력(c매개변수가 없기때문에)
+
+        //2번
+        function power(a, b) {
+            if (b) {
+                var output = 1;
+                for (var i = 0; i < b; i++) { //a에 b성을 만드는 의미, 만약 b=2라면 i는 두번 돌기 때문에 a의b제곱(a의2성)이 된다.
+                    output *= a; //output=output*a;
+                }
+                return output;
+            } else {
+                return a * a;
+            }
+        }
+        console.log(power(2));
+        console.log(power(2, 3));
+
+        function multiply() {
+            var output = 1;
+            for (var i = 0; i < arguments.length; i++) {
+                output *= arguments[i];
+            }
+            return output;
+        }
+        console.log(multiply(1, 2, 3, 4, 5));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
