@@ -1,51 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
         //1번
-        var chef={
+        var chef = {
             이름: 'Nature of Code',
-            가격: 30000+'원',
+            가격: 30000 + '원',
             저자: '다니엘 쉬프만',
             ISBN: 9788968481901,
-            페이지수: 620+'페이지'
+            페이지수: 620 + '페이지'
         };
-        var output='';
-        with(chef){
-                output+='이름: '+이름+'\n';
-                output+='가격: '+가격+'\n';
-                output+='저자: '+저자+'\n';
-                output+='ISBN '+ISBN+'\n';
-                output+='페이지 수: '+페이지수+'\n';
+        var output = '';
+        with(chef) {
+            output += '이름: ' + 이름 + '\n';
+            output += '가격: ' + 가격 + '\n';
+            output += '저자: ' + 저자 + '\n';
+            output += 'ISBN ' + ISBN + '\n';
+            output += '페이지 수: ' + 페이지수 + '\n';
         }
         alert(output);
 
         //2번
-        function stars(){
-            get:function(){
-            alert()
-            }
+        function star1(name, mineral, gas, supply) 
+        {
+
+            var starunit = 
+            {
+                이름: name,
+                미네랄: mineral,
+                가스: gas,
+                보급품: supply,
+                toString: function () 
+                {
+                    return this.이름 + ' ' + this.미네랄 + ' ' + this.가스 + ' ' + this.보급품;
+                }
+            };
+            return starunit;
         }
-        var star=[
-        {name: 일벌레, mineral: 50,gas: 0, supply: 1},
-        {name: 일벌레, mineral: 50,gas: 0, supply: 1},
-        {name: 일벌레, mineral: 50,gas: 0, supply: 1},
-        {name: 일벌레, mineral: 50,gas: 0, supply: 1}
-        ];
-        var output='이름(name)\t미네랄(mineral)\t가스(gas)\t보급품(supply)';  
-        for(var i in star){
-            output+=star[i].toString()+'\n';
+        var arr=[];
+        arr.push(star1('일벌레',50,0,1));
+        arr.push(star1('여왕',150,0,2));
+        arr.push(star1('바퀴',75,25,2));
+        arr.push(star1('히드라리스크',100,50,2));
+        arr.push(star1('타락귀',150,100,2));
+
+        var star2='이름'+' '+'미네랄'+' '+'가스'+' '+'보급품\n';
+
+        for(var index in arr){
+            star2+=arr[index]+'\n';
         }
-        alert(output);
+        alert(star2);
+
         //3번
-        var object={
-            ["+"]:1,
-            ["-"]:2,
-            ["*"]:3,
-            ["/"]:4,
+        var object = {
+            ["+"]: 1,
+            ["-"]: 2,
+            ["*"]: 3,
+            ["/"]: 4,
         };
         alert(object["+"]);
         alert(object["-"]);
@@ -53,7 +68,9 @@
         alert(object["/"]);
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
