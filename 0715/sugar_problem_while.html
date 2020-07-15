@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var inputsugar = Number(prompt('사탕 공장에서 요청한 설탕 kg 수?', ''));
+        var package = 0;
+        while (true) {
+            if (inputsugar % 5 == 0) {
+                package += inputsugar/5;
+                alert(package);
+                break;
+            }
+
+            inputsugar -= 3;
+            package++;
+
+            if(inputsugar<0){
+            alert('-1');
+            break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

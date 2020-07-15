@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //변수 선언
+       var unit={};
+
+       //객체에 속성을 추가
+       unit.zero='이름(name)  '+'    미네랄(mineral)'+'    가스(gas)'+'  보급품(supply)';
+       unit.one='히드라리스크'+'\t'+'     150'+'\t'+'                 50'+'\t'+'        1';
+       unit.two='뮤탈'+'\t'+'                 111'+'\t'+'                 15'+'\t'+'        2';
+       unit.three='저그'+'\t'+'                 123'+'\t'+'                 13'+'\t'+'        4'; 
+       unit.four='울트라'+'\t'+'              152'+'\t'+'                 13'+'\t'+'        4';
+
+//toString()메서드만들기
+unit.toString=function(){
+    var output='';
+    for(var index in this){
+        //toString() 메서드는 출력하지 않게 합니다
+        if(index!='toString'){
+            output+=this[index]+'\n';
+        }
+    }
+    return output;
+};
+    //    alert(unit.toString());  //toString()메서드를 사용하지 않아도 사용한거와 똑같이 출력된다.
+       alert(unit);
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

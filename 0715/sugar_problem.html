@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       var inputsugar=Number(prompt('사탕 공장에서 요청한 설탕 kg 수?',''));
+       var package=0;
+       var array=[];
+       for(var i=0; i<=Math.floor(inputsugar/5); i++){
+           for(var j=0; j<Math.floor(inputsugar/3); j++){
+               if((i*5)+(j*3)==inputsugar){
+                   //alert(Number(i+j));
+                   array.push(Number(i+j));
+               }
+           }
+       }
+       if(array.length==0){
+           alert(-1);
+       }
+       else{
+           array.sort(function(left,right) {return left-right});
+           alert(array[0]);
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

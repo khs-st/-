@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //생성자 함수, this 키워드, 생성자 함수를 사용한 객체 배열 생성
+        /*1번
+        function Student(name,age,gender,score){
+            this.이름=name;
+            this.나이=age;
+            this.성별=gender;
+            this.점수=score;
+        }              
+        function User(user1,user2){
+            this.사용자1=user1;
+            this.사용자2=user2;
+        }                      
+        var student1= new Student('kobalja',26,'남','A+');
+        var user=new User('kobalja  26  남  a','Domanga 26 남 b');
+        alert(student1.이름);                    
+        alert(user.사용자1);    
+        alert(user.사용자2);         
+*/
+
+        /*2번
+                function Student2(name,age,gender,score,score1,insungscore){
+                    this.이름=name;
+                    this.나이=age;
+                    this.성별=gender;
+                    this.점수=score;
+                    this.과목1성적=score1;
+                    this.인성점수=insungscore;
+                    this.toString=function(){
+                        return "이름: "+name+ "나이: "+age+ "성별: "+gender+ "점수: "+score;
+                    }
+                    this.getSum=function(){
+                        return this.과목1성적+this.인성점수
+                    }
+                }                
+                var student2=new Student2('kobalja',27,'남','A');
+                alert(student2.toString());
+                */
+
+        /*  //3번
+        function Student3(name, age, gender, score) {
+            this.이름 = name;
+            this.나이 = age;
+            this.성별 = gender;
+            this.점수 = score;
+            this.toString=function(){
+                        return "이름: "+name+ "나이: "+age+ "성별: "+gender+ "점수: "+score;
+                    }
+        }
+        var student3 = [];
+        student3.push(new Student3('kobalja1', 26, '남', 100));
+        student3.push(new Student3('kobalja2', 27, '남', 90));
+        
+        var output = '이름\t나이\t성별\t점수\n';
+        for (var index in student3) {
+            output += student3[index].toString() + '\n';
+        }
+        alert(output);
+*/
+
+/*
+        //4번 프로토타입(:생성자 함수로 생성된 객체가 공통으로 가지는 공간이다.), 상속,Run(),new키워드(객체생성하는것,생성자함수)
+        //prototype은 객체인데 기존 객체에 추가로 메서드를 제공할 수 있게 해준다. 메서드 하나만 생성해도 모든 객체가 해당 메서드를 사용할 수 있습니다. 
+        //따라서 프로토타입을 사용한 객체 구조가 있다면 생성자 함수로 객체를 만들 때는 생성자 함수 내부에 속성만 넣는다.
+        function Rectangle(w, h) {
+            //변수 선언
+            var width = w;
+            var height = h;
+            //메서드 선언, 캡슐화(77~100번줄까지)
+            this.getWidth = function () 
+            {
+                return width;
+            };
+            this.getHeight = function () 
+            {
+                return height;
+            };
+            this.setWidth = function (w) 
+            {
+                if (w < 0) {
+                    throw '길이는 음수일리가 없습니다.'
+                } else {
+                    width = w;
+                }
+            };
+            this.setHeight = function (h) 
+            {
+                if (h < 0) {
+                    throw '길이는 음수일리가 없습니다.'
+                } else {
+                    height = h;
+                }
+            };
+        }
+
+        Rectangle.prototype.getArea = function () {
+            return this.getWidth() * this.getHeight();
+        };
+
+        function Square(length) { //인자 1개를 받는 객체를 만들었다. 그 이유는 정사각형을 만들기 위해서. 109번째 줄에 변수를 선언하며 인자 1개를 넣었다.
+            this.base1 = Rectangle; //extends의 개념
+            this.base1(length, length); //super()의 개념
+        }
+        Square.prototype = Rectangle.prototype;
+        //Square.prototype.constructor = Square; // 없어도 실행이 됩니다. 이 코드의 역할은 var square=new Square(5)역할을 한다. 비슷하다.
+
+        var rectangle = new Rectangle(5, 7);        //여기서 rectangle은 객체,인스턴스를 의미   Rectangle()는 생성자 함수를 의미한다.
+        var square = new Square(5); //Rectangle 객체를 상속받는 객체이다.
+
+        alert('직사각형 넓이: '+rectangle.getArea() + '   ' +'정사각형 넓이: '+ square.getArea());
+        alert(square instanceof Rectangle);
+
+
+/*
+        //상속 예시
+        function Animal(name, kg, age) {
+            this.이름 = name;
+            this.무게 = kg;
+            this.나이 = age;
+           
+        }
+        Animal.prototype.Run = function () {
+            alert(' 이름: ' + this.이름+' 무게: ' + this.무게 + ' 나이: ' + this.나이);
+        }
+        var Ani = new Animal('Animal',50, 15,);
+        Ani.Run();
+
+        function Lion(name,kg,age) {       //function ooo() 에서 인자가 반드시 있어야 하는가? 있어야한다. 없으면 실행되지 않고 없다면 this.base(지정값을 넣으면된다.) 이렇게 하면 된다.
+            this.base = Animal;
+            this.base(name,kg, age);
+        }
+        Lion.prototype = Animal.prototype;
+        var dongmool = new Lion('Lion',40, 15); //Animal 객체를 상속받는 객체이다. 즉 Animal 객체로부터 만들어진 객체
+        dongmool.Run();
+        */
+
+/*
+
+        //Object 객체의 prototype 속성에 메서드 추가
+        Object.prototype.test=function(){  //Object 객체의 프로토타입에 메서드를 추가한다.
+            alert(this);
+        };
+        var num='kobalja'+2020;
+        num.test();
+
+        //String 객체 메서드 사용
+        var string='kobalja';
+
+        string=string.toUpperCase();
+        alert(string);
+
+        //메서드 체이닝
+        var output="Hello kobalja!";
+        ouput=output.toUpperCase().toLowerCase().substring(0,10).anchor('name');
+        alert(output);
+        
+
+        //정렬 sort()메서드,   x부터 y미만까지 배열에 남겨둔다. slice(x,y)
+        //left-right:오름차순 정렬, right-left:내림차순 정렬
+        var array=[4,21,3,14];
+        array.sort(function(left,right){
+            return left-right;
+        });
+        alert(array); //전체 배열 출력
+        array=array.slice(0,3); //array[0]~array[2]까지 배열에 남겨둔다.(0이상 3미만까지)
+        alert(array); //3,4,14 출력
+
+*/
+
+        function stu(name,korean,math,english,science){
+            //속성
+            this.이름=name;
+            this.국어=korean;
+            this.수학=math;
+            this.영어=english;
+            this.과학=science;
+
+            //메서드
+            this.getSum=function(){
+                return this.국어+this.수학+this.영어+this.과학;
+            };
+            this.getAverage=function(){
+                return this.getSum()/4;
+            };
+            this.toString=function(){
+                return this.이름+'     '+this.getSum()+'          '+this.getAverage();
+            };
+        }
+        var student0715=[];
+        student0715.push(new stu('kobalja_1',95,92,88,90));
+        student0715.push(new stu('kobalja_2',90,92,93,99));
+        student0715.push(new stu('kobalja_3',99,99,98,100));
+
+        student0715.sort(function(left,right){
+        return right.getSum()-left.getSum();
+        });
+        student0715=student0715.slice(0,2); //0이상 2미만까지 출력
+
+        var output='이름           총점        평균\n';
+        for(var index in student0715){
+            output+=student0715[index].toString()+'\n';
+        }
+        alert(output);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
