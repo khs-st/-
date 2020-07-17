@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //변수를 선언합니다.
+        var child = window.open('', '', 'width=300,height=200');
+        child.moveTo(0, 0);
+        child.resizeTo(500,500);
+        setInterval(function () {
+            child.moveBy(10,10);
+            child.resizeBy(10,100);
+        }, 1000);
+        //팝업차단해제시 새창오픈(kobalja라 적힌 창이다)
+        if (child) {
+            child.document.write('<h1>Kobalja</h1>');
+
+        } else {
+            alert('팝업 차단을 해제해주세요.');
+        }
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

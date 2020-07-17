@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var audio=new Audio('puzzle.mp3');
+        var smartPhones=['iphone','ipod','android'];
+        for(var i in smartPhones){
+            if(navigator.userAgent.toLowerCase().match(smartPhones[i])){
+                alert('스마트폰 페이지로 이동합니다.');
+                location='http://m.hanbit.co.kr'
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="audio.play()">PLAY</button>
+    <button onclick="audio.pause()">PAUSE</button>
+    <input type="number" onchange="audo.currentTime=this.value">
+    <input type="number" onchange="audo.volume=this.value">
+</body>
+</html>
