@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <script>
+        
+        //이벤트 용어 연습
+        window.onload = function () {
+            var event = document.getElementById('Event');
+
+            //이벤트를 연결한다.
+            event.onclick = function () {
+                alert('click!');
+
+                //이벤트를 제거한다.
+                // event.onclik=null;
+            }
+        };
+    </script> -->
+    <!--이벤트 핸들러 안에서 this 키워드-->
+    <!-- <script>
+        window.onload = function () {
+            document.getElementById('Event').onclick = function () {
+                this.style.color = 'skyblue';
+                this.style.backgroundColor = 'grey';
+
+            };
+        };
+        
+    </script> -->
+    <script>
+        window.onload = function () {
+            document.getElementById('Event').onclick = function (e) {
+                //이벤트 객체 설정
+                var event = e || window.event;
+
+                document.body.innerHTML = '';
+                for (var key in event) {
+                    document.body.innerHTML += '<p>' + key + ':' + event[key] + '</p>';
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <h1 id="Event">클릭해보세요!</h1>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--이벤트 강제 실행-->
+    <!--script>
+        window.onload=function(){
+            //문서 객체를 가져온다.
+            var button1=document.getElementById('버튼1');
+            var button2=document.getElementById('버튼2');
+            var counterA=document.getElementById('ca');
+            var counterB=document.getElementById('cb');
+
+            button1.onclick=function(){
+                counterA.innerHTML=Number(counterA.innerHTML)+1;
+               
+            };
+            button2.onclick=function(){
+                counterB.innerHTML=Number(counterB.innerHTML)+1;
+               
+            };
+        }
+    </script-->
+
+    <!--표준 이벤트 모델-이벤트연결, 이벤트 모델의 통합적 사용-->
+    <script>
+        window.onload=function(){
+            var header=document.getElementById('my-header');
+
+            // header.addEventListener('click',function(){
+            //     this.innerHTML+='+';
+            //     this.innerHTML='<h1 style="color: blue;">click here!</h1>'
+                
+            // });
+
+            if(header.attachEvent){
+                //익스플로러일때만 실행
+                var hander=function(){
+                    window.event.srcElement.style.color='red';
+                    window.event.srcElemnet.detachEvent('onclick',handler);
+                };
+                header.attachEvent('onclick',handler);
+            }
+            else{
+                //그 이외의 브라우저에서 실행한다.
+                var handler=function(){
+                    this.style.color='red';
+                    this.removeEventListener('click',handler);
+                };
+                header.addEventListener('click',handler);
+            }
+        };
+    </script>
+</head>
+<body>
+    <button id="버튼1">버튼1</button>
+    <button id="버튼2">버튼2</button>
+    <h1>버튼1-<span id="ca">0</span></h1>
+    <h1 >버튼2-<span id="cb">0</span></h1>
+    <h1 id="my-header">click here!</h1>
+</body>
+</html>
