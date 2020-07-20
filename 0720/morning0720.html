@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        var num = Number(prompt('숫자를 입력하세요.', '0'));
+
+        var a = function NotSelfNum(num) {
+            return console.log(Math.floor(num + num / 10 + num % 10));
+        }
+
+        a(num);
+
+        //문제1 풀이 
+        function d(n) {
+            var sum = n;
+            while (true) {
+                if (n == 0)
+                    break;
+
+                sum += n % 10;
+                n = Math.floor(n / 10);
+            }
+            return sum;
+        }
+        var array = new Array(10001);
+        array.fill(false); //false로 배열을 다 채운다.
+        for (var i = 1; i < 10001; i++) {
+            var index = d(i);
+            array[index] = true; //생성자가 있다.
+        }
+        var out = '';
+        for (var i = 1; i < 10001; i++) {
+            if (array[i] == false)
+                out += i + '\n';
+        }
+        console.log(out);
+*/
+
+        //문제2 풀이
+        function Hansoo(Input) {
+            var digit = String(Input).length;
+            var stringInput = String(Input);
+            if (digit <= 2) {
+                return true;
+            } else {
+                var diff = 0; //차이값
+                var previous = 0;
+                for (var i = 0; i < digit - 1; i++) {
+                    diff = Number(stringInput[i]) - Number(stringInput[i + 1]);
+                    if (i == 0) {
+                        previous = diff;
+                    } else {
+                        if (diff != previous)
+                            return false;
+                        else
+                            previous = diff;
+                    }
+                }
+                if (diff != previous)
+                    return false;
+                else
+                    return true;
+
+
+            }
+        }
+
+        var inputNumber = prompt('숫자를 입력하시오.', '');
+        var count = 0;
+        for (var i = 1; i <= inputNumber; i++) {
+            if (Hansoo(i)) {
+                count++;
+            }
+        }
+        alert(count);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
