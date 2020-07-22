@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function Student(name, number, gender)
+        {
+            this.이름 = name;
+            this.학번 = number;
+            this.성별 = gender;
+            // this.toString = function()
+            // {
+            //     return '이름 : ' + this.이름 + ' 학번 : ' + this.학번 + ' 성별 : ' + this.성별;
+            // }
+        }
+
+        Student.prototype.toString = function()
+        {
+                return '이름 : ' + this.이름 + ' 학번 : ' + this.학번 + ' 성별 : ' + this.성별;
+        }
+        var array = [];
+
+        array.push(new Student('이동준',2009038033,'남'));
+        array.push(new Student('안혜주',2020038011,'여'));
+        array.push(new Student('고한솔',2015012011,'남'));
+        array.push(new Student('안희령',2017011023,'여'));
+        
+        var output = '';
+        
+        for(var index in array)
+        {
+            output += array[index] + '\n';
+        }
+
+        alert(output);
+
+
+        for(var index in array)
+        {
+            if(array[index].이름 === '이동준')
+                array[index].학번 = 2019038033;
+        }
+        output = '';
+        for(var index in array)
+        {
+            output += array[index] + '\n';
+        }
+        alert(output);
+
+        // const idx = array.findIndex((function(item) {return item.이름 === '안혜주'}));
+        const idx = array.findIndex(((item) => item.이름 === '안혜주'));
+        if(idx != -1)
+            array.splice(idx, 1);
+
+        output = '';
+        for(var index in array)
+        {
+            output += array[index] + '\n';
+        }
+        alert(output);
+
+        for(var i = 0; i<2; i++)
+        {
+            var name = prompt('이름은?', '');
+            var number = parseInt( prompt('학번은?', 0));
+            var gender = prompt('성별은?(남,여)', '')
+            array.push(new Student(name, number, gender));
+        }
+
+        output = '';
+        for(var index in array)
+        {
+            output += array[index] + '\n';
+        }
+        alert(output);
+        
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

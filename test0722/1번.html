@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        /* Random r = new Random();
+        r.nextInt();
+        console.log(r); */ 
+
+        // var r = Math.random();
+        // var s = Math.random(); 
+        var arrayR=[];
+        var arrayS=[];
+        var inputR=0;
+        var inputS=0;
+        var output='';
+        do{
+        var r=Math.floor(Math.random()*7);
+        var s=Math.floor(Math.random()*7);
+        inputR=r;    
+        const idR=arrayR.indexOf(inputR);
+        arrayR.push(inputR);
+        inputS=s;
+        const idS=arrayS.indexOf(inputS);
+        arrayS.push(inputS);
+        if(r>0&&r>0){
+        output+='  r='+inputR+'0   '+'s='+inputS;
+        }
+        }while(arrayR.length<3);
+        console.log(output);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

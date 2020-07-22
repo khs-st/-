@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            var input = [];
+            var answer = [];
+            var output = '';
+            var outputI = '';
+            //배열 중복 검사
+            function Remove(a, arr) {
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i] === a) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            //정답인 3자리 숫자를 랜덤으로 만들기(중복제거)
+            var i = 0;
+            while (i < 3) {
+                var final = Math.floor(Math.random() * 10);
+                if (!Remove(final, answer)) {
+                    answer.push(final);
+                    output += final;
+                    i++;
+                }
+            }
+
+            //버튼 클릭시 배열에 저장(내가 선택하는 숫자3개)
+            $(".btn").on("click", function () {
+                var input_number = $(this).val();
+                if (input.length < 3) {
+                    if (!Remove(input_number, input)) {
+                        input.push(input_number);
+                        outputI += input_number;
+                    }
+                }
+                console.log(outputI);
+            });
+
+            //정답은? 버튼 클릭시 랜덤저장한 정답배열 출력
+            $(".btnR").on("click", function () {
+                console.log(output);
+            });
+            //취소 버튼
+            $(".btnC").on("click", function () {
+
+            })
+            //제출 버튼
+            $(".btnS").on("click", function () {
+                for(var i=0; i<answer.length; i++){
+                    if(input[i]=answer[i]){
+                        console.log("S"+"B")
+                    }
+                }
+            });
+        });
+    </script>
+    <style>
+        div {
+            height: 100px;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            font-size: 20px;
+
+        }
+
+        .btnC {
+            width: 100px;
+            height: 70px;
+            font-size: 20px;
+            margin: 10px 30px;
+            font-weight: bold;
+        }
+
+        .btnS {
+            width: 100px;
+            height: 70px;
+            margin: 30px 70px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .btnR {
+            width: 100px;
+            height: 70px;
+            margin: 20px 30px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="1">
+        <h1></h1>
+    </div>
+    <div class="2">
+        <input type="button" class="btn" value="0">
+        <input type="button" class="btn" value="1">
+        <input type="button" class="btn" value="2">
+        <input type="button" class="btn" value="3">
+        <input type="button" class="btn" value="4">
+        <br>
+        <input type="button" class="btn" value="5">
+        <input type="button" class="btn" value="6">
+        <input type="button" class="btn" value="7">
+        <input type="button" class="btn" value="8">
+        <input type="button" class="btn" value="9">
+        <br>
+        <input type="button" class="btnC" value="취소" />
+        <input type="button" class="btnS" value="제출" />
+        <br>
+        <input type="button" class="btnR" value="정답은?" />
+    </div>
+    <div class="3">
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        var min = 0;
+        var max = 10;
+        var temp;
+        var j;
+        var array = [];
+        var input = 0;
+        var output = '';
+        do {
+            var computer = Math.floor(Math.random() * 10);
+            input = computer;
+            const idx = array.indexOf(input);
+            array.push(input);
+            output += input + ' ';
+        } while (array.length < 4);
+        console.log(output);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
