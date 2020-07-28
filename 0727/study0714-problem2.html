@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1번 with와 변수 output를 이용하여 변수 한번에 출력
+        var Stulist = {
+            이름: 'kobalja',
+            학번: 520727,
+            과목: '자바스크립트',
+            과목코드: 20200727,
+            총학생인원: 100 + '명'
+        };
+        var output = '';
+        with(Stulist) {
+            output += '이름: ' + 이름 + '\n';
+            output += '학번: ' + 학번 + '\n';
+            output += '과목: ' + 과목 + '\n';
+            output += '과목번호 ' + 과목코드 + '\n';
+            output += '총학생인원: ' + 총학생인원 + '\n';
+        }
+        alert(output);
+
+        //2번 함수로 student와 함수안에 변수 생성 후 메서드 넣고 배열안에 push로 추가하여 Stuoutput으로 배열 출력
+        function student(Name, Stunum, Major, MajorCode) {
+
+            var Stuform = {
+                이름: Name,
+                학번: Stunum,
+                과목: Major,
+                과목코드: MajorCode,
+                toString: function () {
+                    return this.이름 + ' ' + this.학번 + ' ' + this.과목 + ' ' + this.과목코드;
+                }
+            };
+            return Stuform;
+        }
+        var arr = [];
+        arr.push(student('kobalja', 520727, '자바스크립트', 20200727));
+        arr.push(student('Mr.Sin', 520726, '자바', 20200726));
+        arr.push(student('Mr.In', 520713, '제이쿼리', 20200723));
+        arr.push(student('Mrs.Han', 520712, 'Mysql', 20200725));
+        arr.push(student('Mrs.Kim', 520719, '자바스크립트', 20200721));
+
+        var Stuoutput = '이름' + ' ' + '학번' + ' ' + '과목' + ' ' + '과목코드\n';
+
+        for (var index in arr) {
+            Stuoutput += arr[index] + '\n';
+        }
+        alert(Stuoutput);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
