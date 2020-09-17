@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnClick Event</title>
+  <script src="practice.js"></script>
+  <link rel="stylesheet" href="practice.css">
+</head>
+
+<body>
+  <form id="Event" method="post" name="hide_and_show_form">
+    <input id="sss" name="hide_btn" type="button" value="Show" onclick="view(this.value);">
+    <div id="display_btn" style="display: none;">
+      <div id="display_view" style="z-index: 1; width: 500px; border: 1px solid #808080;">
+        <div><input type="button" value="클릭" onclick="saywelcome();" /> <br />
+          <input type="button" value="Double Click Here!" ondblclick="ondblclick_event();" /> <br />
+          <input type="button" value="왼쪽or오른쪽 클릭" onmousedown="onmousedown_event();" /> <br />
+          <input type="text" value="왼쪽or오른쪽 놓았을 때" onmouseup="onmouseup_event();" /></div>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>
